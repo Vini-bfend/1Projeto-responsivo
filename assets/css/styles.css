@@ -19,9 +19,8 @@ img{
     max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-weight: normal;
-    margin: 1em 0;
+h1, h2, h3 {
+    color: rgb(97, 38, 116);
 }
 
 h1{
@@ -53,7 +52,8 @@ header div {
 
 header nav ul {
     text-align: center;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
@@ -76,20 +76,59 @@ header nav ul li:last-child {
     border-bottom: none;
 }
 
-.main-section {
+.section-1 {
     background-color: rgb(246, 246, 244);
     color:  rgb(97, 38, 116);
-    margin: 0;
+    padding: 0 20px;
     text-align: center;
 }
 
-.card {
+.card:not(:first-child) {
     margin: 50px 0 0;
+}
+
+.card h1 {
+    padding-top: 20px;
+    margin: 0;
 }
 
 .card h2, .card p {
     margin: 0;
     padding: 0;
+}
+
+.section-2 {
+    padding: 20px;
+}
+
+.section-2 p{
+    color: black;
+}
+
+footer {
+    background-color: rgb(37, 48, 62);
+    text-align: center;
+}
+
+#icons {
+    background-color: rgb(48, 61, 76);
+    color: white;
+    padding: 10px 0;
+}
+
+#icons i {
+    padding: 0 10px;
+}
+
+.div-footer {
+    color: rgb(131, 150, 159);
+    line-height: 1.5;
+    padding: 10px 20px 30px;
+}
+
+.div-footer p {
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .default-button {
