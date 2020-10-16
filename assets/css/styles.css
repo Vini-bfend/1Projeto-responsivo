@@ -39,7 +39,7 @@ h3{
 
 .header-top {
     background-color: white;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .nav-header {
@@ -84,7 +84,7 @@ h3{
 
 .section-1 {
     background-color: rgb(246, 246, 244);
-    color:  rgb(97, 38, 116);
+    color:  rgb(0, 0, 0);
     line-height: 1.5;
     padding: 10px 30px;
     text-align: center;
@@ -167,6 +167,14 @@ footer {
     background-color: rgb(55, 160, 160);
 }
 
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
 
 
 /* Definição para Tablet */
@@ -191,9 +199,30 @@ footer {
     
     .header-top .nav-header .menu li {
         border: none;
-        padding: 10px;
-        margin: 10px 5px 0;
+        position: relative;
     }
+
+    .header-top .nav-header .menu li::before {
+
+        content: "\f00d";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        
+        color: red;
+        position: absolute;
+        top: -5px;
+        left: calc(50% - 5px);
+    }
+    
+    .header-top .nav-header .menu li:hover::before {
+        animation-name: opacidade;
+        animation-duration: .8s;
+       
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f00c";
+        color: green;       
+    } 
     
     .header-top .nav-header .menu li:hover {
         background-color: rgb(231, 217, 252);
@@ -201,6 +230,8 @@ footer {
     
     .header-top .nav-header .menu li a{
         color: rgb(97, 38, 116);
+        padding: 10px;
+        margin: 10px 5px 0;
     }
 
     .section-1 {
@@ -233,11 +264,12 @@ footer {
     .section-1 .side-by-side {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
-
+    
     .section-1 .side-by-side .card {
         color: black;
-        width: 40%;
+        width: 42%;
     }
     
     .section-1 .side-by-side .card h2 {
@@ -254,4 +286,80 @@ footer {
         margin-top: 50px;
     }
 
+}
+
+@media screen and (min-width: 1024px) {
+    .card-principal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../images/bg_topo_1600x1374.jpg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 600px;
+    }
+
+    
+    .section-1 .card-principal h1::before{
+        content: url('../images/icon_play.png');
+        position: absolute;
+        top: 120px;
+    }
+
+    .card-principal::after{
+        content: "";
+        background-image: linear-gradient(to bottom, rgba(88, 196, 196, 0.315), rgba(0, 0, 0, 0.616));
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 600px;
+        width: 100%;
+    }
+
+    .card-principal .card-principal-alinhador {
+        font-size: 20px;
+        width: 50%;
+        z-index: 1;
+    }
+
+    .section-1 .card-principal .card-principal-alinhador h1 {
+        margin-bottom: 20px;
+    }
+
+    .section-1 .side-by-side {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+    
+    .section-1 .side-by-side .card {
+        width: 20%;
+        padding-bottom: 30px;
+    }
+
+    .section-2 .side-by-side {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+
+    .section-2 .side-by-side .card {
+        box-sizing: border-box;
+        line-height: 1.2;
+        padding: 10px 40px;
+        width: 49%;
+    }
+
+    .section-2 .card > .default-button {
+        position: absolute;
+        left: 40px;
+    }
+}
+
+
+@keyframes opacidade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
